@@ -5,8 +5,10 @@ const Project = ({
   title,
   description,
   subDescription,
-  href,
+  github,
+  live,
   image,
+  layout,
   tags,
   setPreview,
 }) => {
@@ -15,7 +17,7 @@ const Project = ({
     <>
       <div
         className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
-        onMouseEnter={() => setPreview(image)}
+        onMouseEnter={() => setPreview({ image, layout })}
         onMouseLeave={() => setPreview(null)}
       >
         <div>
@@ -41,8 +43,10 @@ const Project = ({
           description={description}
           subDescription={subDescription}
           image={image}
+          layout={layout}
           tags={tags}
-          href={href}
+          github={github}
+          live={live}
           closeModal={() => setIsHidden(false)}
         />
       )}

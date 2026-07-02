@@ -24,8 +24,10 @@ const Projects = () => {
       ))}
       {preview && (
         <motion.img
-          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
-          src={preview}
+          className={`fixed top-0 left-0 z-50 object-cover rounded-2xl shadow-2xl pointer-events-none border border-white/10 ${
+            preview.layout === "portrait" ? "w-44 h-80" : "w-80 h-52"
+          }`}
+          src={preview.image}
           style={{ x: springX, y: springY }}
         />
       )}
