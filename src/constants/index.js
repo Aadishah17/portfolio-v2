@@ -12,7 +12,7 @@ export const myProjects = [
     github: "https://github.com/EchoMusicApp/Echo-Music",
     live: "https://github.com/EchoMusicApp/Echo-Music/releases",
     logo: "",
-    image: "/assets/projects/echo_music_mockup.png",
+    image: "/assets/projects/echo_music_mockup.webp",
     layout: "portrait",
     tags: [
       {
@@ -55,7 +55,7 @@ export const myProjects = [
     github: "https://github.com/Aadishah17/GoldenHour",
     live: "",
     logo: "",
-    image: "/assets/projects/goldenhour_mockup.png",
+    image: "/assets/projects/goldenhour_mockup.webp",
     layout: "landscape",
     tags: [
       {
@@ -98,7 +98,7 @@ export const myProjects = [
     github: "https://github.com/Aadishah17/CollabLearn",
     live: "https://collablearn.vercel.app",
     logo: "",
-    image: "/assets/projects/collablearn_mockup.png",
+    image: "/assets/projects/collablearn_mockup.webp",
     layout: "landscape",
     tags: [
       {

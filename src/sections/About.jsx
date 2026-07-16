@@ -1,8 +1,11 @@
-import { useRef } from "react";
+import { useRef, lazy, Suspense } from "react";
 import Card from "../components/Card";
-import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
-import { Frameworks } from "../components/FrameWorks";
+import { Frameworks } from "../components/Frameworks";
+
+const Globe = lazy(() =>
+  import("../components/globe").then((m) => ({ default: m.Globe }))
+);
 
 const About = () => {
   const grid2Container = useRef();
@@ -13,7 +16,7 @@ const About = () => {
         {/* Grid 1 */}
         <div className="flex items-end grid-default-color grid-1">
           <img
-            src="assets/coding-pov.png"
+            src="assets/coding-pov.webp"
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10">
@@ -109,7 +112,9 @@ const About = () => {
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
+            <Suspense fallback={<div className="size-[30rem] flex items-center justify-center text-neutral-400 text-sm">Loading Globe...</div>}>
+              <Globe />
+            </Suspense>
           </figure>
         </div>
         {/* Grid 4 */}

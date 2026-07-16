@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import ProjectDetails from "./ProjectDetails";
+import React, { useState, lazy, Suspense } from "react";
+
+const ProjectDetails = lazy(() => import("./ProjectDetails"));
 
 const Project = ({
   title,
@@ -38,17 +39,19 @@ const Project = ({
       </div>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
       {isHidden && (
-        <ProjectDetails
-          title={title}
-          description={description}
-          subDescription={subDescription}
-          image={image}
-          layout={layout}
-          tags={tags}
-          github={github}
-          live={live}
-          closeModal={() => setIsHidden(false)}
-        />
+        <Suspense fallback={null}>
+          <ProjectDetails
+            title={title}
+            description={description}
+            subDescription={subDescription}
+            image={image}
+            layout={layout}
+            tags={tags}
+            github={github}
+            live={live}
+            closeModal={() => setIsHidden(false)}
+          />
+        </Suspense>
       )}
     </>
   );

@@ -1,12 +1,9 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { lazy, Suspense } from "react";
 import HeroText from "../components/HeroText";
 import ParallaxBackground from "../components/ParallaxBackground";
-import { Astronaut } from "../components/Astronaut";
-import { Float } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
-import { easing } from "maath";
-import { Suspense } from "react";
-import Loader from "../components/Loader";
+
+const AstronautCanvas = lazy(() => import("../components/AstronautCanvas"));
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -18,31 +15,19 @@ const Hero = () => {
         className="absolute inset-0"
         style={{ width: "100vw", height: "100vh" }}
       >
-        <Canvas camera={{ position: [0, 1, 3] }}>
-          <Suspense fallback={<Loader />}>
-            <Float>
-              <Astronaut
-                scale={isMobile && 0.23}
-                position={isMobile && [0, -1.5, 0]}
-              />
-            </Float>
-            <Rig />
-          </Suspense>
-        </Canvas>
+        <Suspense fallback={
+          <div className="absolute inset-0 flex items-center justify-center text-white text-xl bg-black/10 backdrop-blur-xs">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 border-4 border-royal border-t-transparent rounded-full animate-spin" />
+              <p className="text-sm font-semibold tracking-wider text-neutral-400">Loading 3D Scene...</p>
+            </div>
+          </div>
+        }>
+          <AstronautCanvas isMobile={isMobile} />
+        </Suspense>
       </figure>
     </section>
   );
 };
-
-function Rig() {
-  return useFrame((state, delta) => {
-    easing.damp3(
-      state.camera.position,
-      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
-      0.5,
-      delta
-    );
-  });
-}
 
 export default Hero;
