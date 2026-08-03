@@ -12,12 +12,12 @@ const GLOBE_CONFIG = {
   width: 800,
   height: 800,
   onRender: () => {},
-  devicePixelRatio: 2,
+  devicePixelRatio: typeof window !== "undefined" ? Math.min(window.devicePixelRatio, 2) : 1,
   phi: 0,
   theta: 0.3,
   dark: 1,
   diffuse: 0.4,
-  mapSamples: 16000,
+  mapSamples: 12000,
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [1, 1, 1],
@@ -42,6 +42,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   const canvasRef = useRef(null);
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
+  const isVisible = useRef(true);
 
   const r = useMotionValue(0);
   const rs = useSpring(r, {
@@ -75,11 +76,24 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
     window.addEventListener("resize", onResize);
     onResize();
 
+    // Pause globe rendering when off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+
+    if (canvasRef.current) {
+      observer.observe(canvasRef.current);
+    }
+
     const globe = createGlobe(canvasRef.current, {
       ...config,
       width: width * 2,
       height: width * 2,
       onRender: (state) => {
+        if (!isVisible.current) return;
         if (!pointerInteracting.current) phi += 0.005;
         state.phi = phi + rs.get();
         state.width = width * 2;
@@ -91,6 +105,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
     return () => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
+      observer.disconnect();
     };
   }, [rs, config]);
 

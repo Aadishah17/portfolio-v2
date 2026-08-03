@@ -9,32 +9,41 @@ const Globe = lazy(() =>
 
 const About = () => {
   const grid2Container = useRef();
+
   return (
     <section className="c-space section-spacing" id="about">
-      <h2 className="text-heading">About Me</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-        {/* Grid 1 */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs font-semibold tracking-widest uppercase text-royal">
+          Background & Capabilities
+        </span>
+        <h2 className="text-heading">About Me</h2>
+      </div>
+
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-10">
+        {/* Grid 1 - Intro */}
         <div className="flex items-end grid-default-color grid-1">
           <img
-            src="assets/coding-pov.webp"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+            src="/assets/coding-pov.webp"
+            alt="Coding POV"
+            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5] opacity-80"
           />
           <div className="z-10">
-            <p className="headtext">Hi, I'm Aadi Shah</p>
+            <p className="headtext font-bold text-white">Hi, I'm Aadi Shah</p>
             <p className="subtext">
               I am a software developer and computer science student passionate about engineering modern full-stack web architectures, mobile client systems, and AI-integrated solutions.
             </p>
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo opacity-90" />
         </div>
-        {/* Grid 2 */}
+
+        {/* Grid 2 - Draggable Skill Cards */}
         <div className="grid-default-color grid-2">
           <div
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full relative"
           >
-            <p className="flex items-end text-5xl text-gray-500 font-bold opacity-20 select-none">
-              BUILD TO SCALE
+            <p className="flex items-end text-5xl text-gray-500 font-extrabold opacity-15 select-none tracking-widest">
+              BUILT TO SCALE
             </p>
             <Card
               style={{ rotate: "-5deg", top: "5%", left: "5%" }}
@@ -103,32 +112,34 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Grid 3 */}
+
+        {/* Grid 3 - Location & Globe */}
         <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
+          <div className="z-10 w-[55%]">
+            <p className="headtext font-bold text-white">Location & Timezone</p>
             <p className="subtext">
-              I'm based in India, and ready to work anywhere (except Antarctica! ❄️)
+              Based in India (IST), available worldwide for remote collaboration and global engineering teams.
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Suspense fallback={<div className="size-[30rem] flex items-center justify-center text-neutral-400 text-sm">Loading Globe...</div>}>
+          <figure className="absolute left-[30%] top-[10%] opacity-90">
+            <Suspense fallback={<div className="size-[30rem] flex items-center justify-center text-neutral-400 text-sm">Loading Interactive Globe...</div>}>
               <Globe />
             </Suspense>
           </figure>
         </div>
-        {/* Grid 4 */}
+
+        {/* Grid 4 - Collaboration CTA */}
         <div className="grid-special-color grid-4">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Do you want to start a project together?
+            <p className="text-center headtext font-bold text-white">
+              Want to start a project together?
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <CopyEmailButton />
               <a
                 href="/Aadi_Shah_Resume.pdf"
                 download="Aadi_Shah_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-semibold rounded-full border border-white/10 bg-midnight hover:bg-midnight/80 hover-animation cursor-pointer text-white w-[12rem] text-center"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-semibold rounded-full border border-white/10 bg-midnight hover:bg-midnight/80 transition-transform active:scale-95 cursor-pointer text-white w-[12rem] text-center shadow-lg"
               >
                 <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -138,15 +149,16 @@ const About = () => {
             </div>
           </div>
         </div>
-        {/* Grid 5 */}
+
+        {/* Grid 5 - Tech Stack */}
         <div className="grid-default-color grid-5">
           <div className="z-10 w-[55%]">
-            <p className="headText">Tech Stack</p>
+            <p className="headtext font-bold text-white">Tech Stack</p>
             <div className="subtext mt-2 space-y-1 text-xs">
-              <p><strong>Languages:</strong> Java, Python, JS/TS, C++, Kotlin, SQL, Swift, Dart</p>
-              <p><strong>Frameworks:</strong> React, Next.js, Node, Express, Redux, Jetpack Compose, Tailwind</p>
-              <p><strong>Databases:</strong> MySQL, MongoDB, Firebase, Supabase</p>
-              <p><strong>Tools:</strong> Git, Docker, Android Studio, VS Code, Postman, AWS</p>
+              <p><strong className="text-white">Languages:</strong> Java, Python, JS/TS, C++, Kotlin, SQL, Swift, Dart</p>
+              <p><strong className="text-white">Frameworks:</strong> React, Next.js, Node, Express, Redux, Jetpack Compose, Tailwind</p>
+              <p><strong className="text-white">Databases:</strong> MySQL, MongoDB, Firebase, Supabase</p>
+              <p><strong className="text-white">Tools:</strong> Git, Docker, Android Studio, VS Code, Postman, AWS</p>
             </div>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">

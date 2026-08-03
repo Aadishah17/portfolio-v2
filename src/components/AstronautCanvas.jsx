@@ -18,7 +18,12 @@ function Rig() {
 
 export default function AstronautCanvas({ isMobile }) {
   return (
-    <Canvas camera={{ position: [0, 1, 3] }}>
+    <Canvas
+      camera={{ position: [0, 1, 3] }}
+      dpr={[1, 1.5]}
+      performance={{ min: 0.5 }}
+      gl={{ antialias: !isMobile, powerPreference: "high-performance" }}
+    >
       <Suspense fallback={<Loader />}>
         <Float>
           <Astronaut

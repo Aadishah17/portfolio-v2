@@ -22,42 +22,46 @@ const ParallaxBackground = () => {
         />
         {/* Mountain Layer 3 */}
         <motion.div
-          className="absolute inset-0 -z-40"
+          className="absolute inset-0 -z-40 transform-gpu"
           style={{
             backgroundImage: "url(/assets/mountain-3.webp)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain3Y,
+            willChange: "transform",
           }}
         />
         {/* Planets */}
         <motion.div
-          className="absolute inset-0 -z-30"
+          className="absolute inset-0 -z-30 transform-gpu"
           style={{
             backgroundImage: "url(/assets/planets.png)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             x: planetsX,
+            willChange: "transform",
           }}
         />
         {/* Mountain Layer 2 */}
         <motion.div
-          className="absolute inset-0 -z-20"
+          className="absolute inset-0 -z-20 transform-gpu"
           style={{
             backgroundImage: "url(/assets/mountain-2.webp)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain2Y,
+            willChange: "transform",
           }}
         />
-        {/* Mountaine Layer 1 */}
+        {/* Mountain Layer 1 */}
         <motion.div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 -z-10 transform-gpu"
           style={{
             backgroundImage: "url(/assets/mountain-1.webp)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain1Y,
+            willChange: "transform",
           }}
         />
       </div>
