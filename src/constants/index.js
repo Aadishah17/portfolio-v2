@@ -1,81 +1,86 @@
 export const myProjects = [
   {
     id: 1,
-    title: "CUDADL",
+    title: "Echo Music",
     description:
-      "A C++17/CUDA tensor framework with a stream-ordered memory pool and mixed-precision Tensor Core matrix multiplication.",
+      "An open-source Android YouTube Music client that has grown to 1,000,000+ downloads and 2,100+ GitHub stars.",
     subDescription: [
-      "A cudaMallocAsync memory pool measured 253× lower allocation latency than raw cudaMalloc/cudaFree for a 64 MB buffer over 1,000 iterations.",
-      "The FP16/BF16 Tensor Core GEMM reached 97% of cuBLAS throughput at 512×512; results vary by matrix size.",
-      "The framework supports FP32, FP16 and BF16, with fused Bias+ReLU/GELU kernels measured up to 1.6× faster than separate operations.",
-      "Automatic differentiation is still in progress.",
+      "Co-founded and actively contribute to an open-source Android YouTube Music client, providing a premium, ad-free listening experience.",
+      "Architected the app using MVVM + Repository pattern with Hilt dependency injection and Jetpack Compose to keep the codebase clean, modular, and easy for community contributors to join.",
+      "Shipped crucial features including a sleep timer, advanced audio quality controls, and Hindi localization through open pull requests reviewed by the community.",
     ],
-    github: "https://github.com/Aadishah17/cuda",
-    live: "",
+    github: "https://github.com/EchoMusicApp/Echo-Music",
+    live: "https://github.com/EchoMusicApp/Echo-Music/releases",
+    logo: "",
+    image: "/assets/projects/echo_music_mockup.webp",
+    layout: "portrait",
     tags: [
       {
         id: 1,
-        name: "Modern C++17",
-        path: "/assets/logos/cplusplus.svg",
+        name: "Kotlin",
+        path: "",
       },
       {
         id: 2,
-        name: "CUDA 13.x",
+        name: "Jetpack Compose",
         path: "",
       },
       {
         id: 3,
-        name: "cuBLAS",
+        name: "MVVM",
         path: "",
       },
       {
         id: 4,
-        name: "CMake",
+        name: "Hilt",
         path: "",
       },
       {
         id: 5,
-        name: "Tensor Cores",
+        name: "REST API",
         path: "",
       },
     ],
   },
   {
     id: 2,
-    title: "CloudPrint",
+    title: "GoldenHour",
     description:
-      "A .NET 10 print-management platform with a REST API, PostgreSQL job store, background worker and optional Azure Service Bus.",
+      "An emergency response Android application that guides bystanders through post-accident response and triage.",
     subDescription: [
-      "PostgreSQL polling recovers jobs when publishing fails; Azure Service Bus is an optional messaging path.",
-      "Workers claim jobs with expiring leases, retry transient failures with backoff, and pass an idempotency key to the printer simulator so completed jobs are not repeated after redelivery.",
-      "The dashboard shows printer and job status and includes failure injection and concurrent batch dispatch for local testing.",
+      "Developed an Android app that guides a bystander through road accident emergency steps: GPS location detection, triage checks, one-tap emergency calling (108/112), and legal guides on India's Good Samaritan Law.",
+      "Designed and simulated a hospital-side trauma dashboard displaying live ambulance coordinates, real-time trauma team readiness, and AI-powered accident severity triage.",
+      "Engineered the application utilizing MVVM + Repository clean architecture, Hilt dependency injection, and Kotlin Coroutines/Flow.",
     ],
-    github: "https://github.com/Aadishah17/CloudPrint",
+    github: "https://github.com/Aadishah17/GoldenHour",
     live: "",
+    logo: "",
+    image: "/assets/projects/goldenhour_mockup.webp",
+    layout: "landscape",
     tags: [
       {
         id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
+        name: "Kotlin",
+        path: "",
       },
       {
         id: 2,
-        name: ".NET 10",
-        path: "/assets/logos/dotnetcore.svg",
+        name: "Jetpack Compose",
+        path: "",
       },
       {
         id: 3,
-        name: "PostgreSQL",
+        name: "MVVM",
         path: "",
       },
       {
         id: 4,
-        name: "Azure Service Bus",
-        path: "/assets/logos/azure.svg",
+        name: "Coroutines & Flow",
+        path: "",
       },
       {
         id: 5,
-        name: "Docker",
+        name: "Hilt",
         path: "",
       },
     ],
@@ -84,14 +89,17 @@ export const myProjects = [
     id: 3,
     title: "CollabLearn",
     description:
-      "A MERN learning platform with Gemini-powered course recommendations.",
+      "A full-stack skill-learning web platform offering AI-powered course recommendations.",
     subDescription: [
-      "Added a course recommendation flow using the Gemini API.",
-      "Targeted MongoDB indexes cut Gemini API response latency by 30%.",
-      "Used Google OAuth2 for sign-in and Redux for client-side state.",
+      "Built and deployed a full-stack skill-learning platform featuring AI course recommendations using the Gemini API and Google AI Studio.",
+      "Optimized MongoDB indexing to cut Gemini API response latencies by 30%, noticeably enhancing user interface speed and application feel.",
+      "Integrated secure Google OAuth2 authentication and utilized Redux for centralized client-side state management.",
     ],
     github: "https://github.com/Aadishah17/CollabLearn",
-    live: "https://collab-learn-xi.vercel.app",
+    live: "https://collablearn.vercel.app",
+    logo: "",
+    image: "/assets/projects/collablearn_mockup.webp",
+    layout: "landscape",
     tags: [
       {
         id: 1,
@@ -120,84 +128,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "GoldenHour",
-    description:
-      "An Android emergency-response prototype with victim-triage prompts and a simulated hospital dashboard.",
-    subDescription: [
-      "Collects a location, walks a bystander through a basic victim assessment, and offers one-tap calls to 108/112.",
-      "Built with MVVM, Hilt and Coroutines/Flow; the hospital dashboard simulates ambulance telemetry.",
-    ],
-    github: "https://github.com/Aadishah17/golden-hour",
-    live: "",
-    tags: [
-      {
-        id: 1,
-        name: "Kotlin",
-        path: "",
-      },
-      {
-        id: 2,
-        name: "Jetpack Compose",
-        path: "",
-      },
-      {
-        id: 3,
-        name: "MVVM",
-        path: "",
-      },
-      {
-        id: 4,
-        name: "Hilt DI",
-        path: "",
-      },
-      {
-        id: 5,
-        name: "Coroutines/Flow",
-        path: "",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Kompass",
-    description:
-      "An offline iOS navigation prototype with GPS tracking and a local route and ETA calculator.",
-    subDescription: [
-      "Uses CoreLocation for GPS and MapKit for maps without network requests.",
-      "Route estimates use a direct-line Haversine calculation; they do not follow road routes.",
-    ],
-    github: "https://github.com/Aadishah17/kompass",
-    live: "",
-    tags: [
-      {
-        id: 1,
-        name: "Swift",
-        path: "",
-      },
-      {
-        id: 2,
-        name: "SwiftUI",
-        path: "",
-      },
-      {
-        id: 3,
-        name: "MapKit",
-        path: "",
-      },
-      {
-        id: 4,
-        name: "CoreLocation",
-        path: "",
-      },
-      {
-        id: 5,
-        name: "Haversine Routing",
-        path: "",
-      },
-    ],
-  },
 ];
 
 export const mySocials = [
@@ -208,13 +138,8 @@ export const mySocials = [
   },
   {
     name: "Linkedin",
-    href: "https://linkedin.com/in/aadi-shah-6535672a6",
+    href: "https://www.linkedin.com/in/aadi-shah-6535672a6",
     icon: "/assets/socials/linkedIn.svg",
-  },
-  {
-    name: "LeetCode",
-    href: "https://leetcode.com/u/Aadi__17",
-    icon: "/assets/socials/leetcode.svg",
   },
   {
     name: "WhatsApp",
@@ -225,25 +150,36 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Engineering Intern",
-    job: "ZM Lifestyle (Hybrid, Mumbai)",
-    date: "May 2025 – June 2025",
+    title: "B.Tech CSE Student",
+    job: "Parul University",
+    date: "2023 - Present",
     contents: [
-      "Designed, implemented, and shipped React.js features for the core product dashboard within a five-engineer Agile team.",
-      "Diagnosed and resolved 10+ defects in the legacy codebase, improving application stability by 15% and reducing incoming error reports.",
-      "Collaborated cross-functionally through daily standups and peer code review as part of an established production engineering process.",
+      "Pursuing a Bachelor of Technology in Computer Science & Engineering (GPA maintained).",
+      "Active member of the Swift Coding Club, collaborating on mobile development projects and workshops.",
+      "Solved 300+ algorithmic problems on LeetCode focusing on Arrays, Trees, Graphs, and Dynamic Programming.",
     ],
   },
   {
-    title: "B.Tech in Computer Science & Engineering",
-    job: "Parul University · Vadodara, Gujarat",
-    date: "2023 – Expected May 2027",
+    title: "Co-Founder & Contributor",
+    job: "Echo Music (Open Source)",
+    date: "2023 - Present",
     contents: [
-      "B.Tech in Computer Science & Engineering; expected graduation May 2027.",
+      "Co-founded and actively contribute to an open-source Android YouTube Music client with over 1,000,000 downloads and 2,100+ GitHub stars.",
+      "Designed clean architecture using MVVM, Hilt, and Jetpack Compose to ensure high modularity and seamless onboarding for new community contributors.",
+      "Successfully shipped user-requested features including a sleep timer, high-fidelity audio quality controls, and Hindi localization through community-reviewed pull requests.",
+    ],
+  },
+  {
+    title: "Software Engineering Intern",
+    job: "ZM Lifestyle",
+    date: "May 2024 - Jul 2024",
+    contents: [
+      "Collaborated within a 5-person engineering team to build and ship core React.js features for the main product dashboard on regular release cycles.",
+      "Identified, debugged, and resolved over 10 critical bugs in the legacy codebase, improving overall application stability by 15% and reducing client-reported errors.",
+      "Participated in daily agile stand-ups, conducted peer pull request reviews, and worked extensively with Git/GitHub workflows in a production environment.",
     ],
   },
 ];
-
 export const reviews = [
   {
     name: "Jack",
