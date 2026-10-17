@@ -1,10 +1,10 @@
-# 🚀 Aadi Shah - 3D Developer Portfolio
+# Aadi Shah Portfolio
 
-A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects.
+A portfolio of Aadi Shah’s software projects, experience, and contact details.
 
 ---
 
-## 📚 Table of Contents
+## Contents
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
@@ -14,35 +14,32 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔥 3D visuals powered by **React Three Fiber** and **Drei**
-- ⚡ Smooth transitions and scroll-based animations using **Framer Motion**
-- 🎨 Clean, responsive UI with **TailwindCSS**
-- 💌 Working contact form with fallback redirect support
-- 🚀 Lightning-fast development with **Vite**
+- Project descriptions with links to source code and live demos
+- Resume download and contact form
+- Responsive layout built with **Tailwind CSS**
+- Built with **React** and **Vite**
 
 ---
 
-## 🛠 Tech Stack
+## Tech stack
 
 | Tech              | Description                           |
 |-------------------|---------------------------------------|
 | React             | Front-end JavaScript library          |
 | Vite              | Fast bundler and dev environment      |
 | TailwindCSS       | Utility-first CSS framework           |
-| React Three Fiber | 3D rendering with Three.js in React   |
-| Drei              | Helpers and abstractions for R3F      |
-| Framer Motion     | Animation library for React           |
+| Motion            | Navigation transitions                |
 | EmailJS           | Form handling and email integration   |
 
 ---
 
-## 📁 Project Structure
+## Project structure
 
 ```bash
 ├── public/
-│   ├── assets/             # Images, textures, models, resume
+│   ├── assets/             # Static assets and resume
 │   └── vite.svg
 ├── src/
 │   ├── components/         # Reusable components
@@ -57,7 +54,7 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 
 ---
 
-## 🚀 Getting Started
+## Run locally
 
 1. Clone the Repository
 ```bash
@@ -86,7 +83,7 @@ The app will be available at http://localhost:5173.
 
 ---
 
-## 📬 Contact Me
+## Contact
 
 * **Email:** [shahaadi285@gmail.com](mailto:shahaadi285@gmail.com)
 * **LinkedIn:** [Aadi Shah](https://www.linkedin.com/in/aadi-shah-6535672a6/)

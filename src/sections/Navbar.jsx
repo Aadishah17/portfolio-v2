@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Work", href: "#work" },
+  { name: "Projects", href: "#work" },
   { name: "Experience", href: "#experiences" },
   { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
@@ -93,13 +93,14 @@ const Navbar = () => {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation menu"
-            className="flex items-center justify-center p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 focus:outline-none sm:hidden transition-colors"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            className="flex items-center justify-center rounded-lg p-2 text-neutral-400 transition-colors hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:hidden"
           >
             <img
               src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
               className="size-6"
-              alt="toggle menu"
+              alt=""
             />
           </button>
 
